@@ -1,5 +1,7 @@
 spring:
   application:
     name: webflux-app
-mongodb:
-  uri: mongodb+srv://admin:admin@webfluxcluster.tigdywe.mongodb.net/webfluxdb?retryWrites=true&w=majority&appName=webfluxCluster
+  data:
+    mongodb:
+      uri: mongodb+srv://admin:admin@webfluxcluster.tigdywe.mongodb.net/webfluxdb?retryWrites=true&w=majority&appName=webfluxCluster
+      auto-index-creation: true
