@@ -5,9 +5,6 @@ import org.mapstruct.Mapping;
 
 import br.com.gabriel.webflux_app.models.User;
 import br.com.gabriel.webflux_app.models.request.UserRequest;
-import org.mapstruct.NullValueCheckStrategy;
-import org.mapstruct.NullValuePropertyMappingStrategy;
-
 import static org.mapstruct.NullValueCheckStrategy.ALWAYS;
 import static org.mapstruct.NullValuePropertyMappingStrategy.IGNORE;
 
