@@ -1,5 +1,6 @@
 package br.com.gabriel.webflux_app.controller.impl;
 
+import br.com.gabriel.webflux_app.mapper.UserMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +20,7 @@ import reactor.core.publisher.Mono;
 public class UserControllerImpl implements UserController {
 
 	private final UserService service;
-
+	private final UserMapper mapper;
 
 	@Override
 	public ResponseEntity<Mono<Void>> save(UserRequest request) {
@@ -28,9 +29,8 @@ public class UserControllerImpl implements UserController {
 	}
 
 	@Override
-	public ResponseEntity<Mono<UserResponse>> find(String id) {
-		// TODO Auto-generated method stub
-		return null;
+	public ResponseEntity<Mono<UserResponse>> findById(String id) {
+		return ResponseEntity.ok().body(service.findById(id).map(mapper::toResponse));
 	}
 
 	@Override
