@@ -51,4 +51,5 @@ public class UserControllerImpl implements UserController {
 		return ResponseEntity.ok().body(service.delete(id).then());
 	}
 
+
 }
