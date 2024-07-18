@@ -1,6 +1,7 @@
 package br.com.gabriel.webflux_app.controller.impl;
 
 import br.com.gabriel.webflux_app.mapper.UserMapper;
+import org.springframework.data.web.ReactivePageableHandlerMethodArgumentResolver;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -47,8 +48,7 @@ public class UserControllerImpl implements UserController {
 
 	@Override
 	public ResponseEntity<Mono<Void>> delete(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		return ResponseEntity.ok().body(service.delete(id).then());
 	}
 
 }
