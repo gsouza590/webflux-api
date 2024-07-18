@@ -6,6 +6,8 @@ import org.mapstruct.Mapping;
 
 import br.com.gabriel.webflux_app.models.User;
 import br.com.gabriel.webflux_app.models.request.UserRequest;
+import org.mapstruct.MappingTarget;
+
 import static org.mapstruct.NullValueCheckStrategy.ALWAYS;
 import static org.mapstruct.NullValuePropertyMappingStrategy.IGNORE;
 
@@ -16,6 +18,10 @@ import static org.mapstruct.NullValuePropertyMappingStrategy.IGNORE;
 public interface UserMapper {
 	@Mapping(target = "id", ignore = true)
 	User toEntity(final UserRequest request);
+
+	// fazer uma sobrecarga
+	@Mapping(target = "id", ignore = true)
+	User toEntity(final UserRequest request, @MappingTarget final User entity);
 
 	UserResponse toResponse(final User user);
 }
