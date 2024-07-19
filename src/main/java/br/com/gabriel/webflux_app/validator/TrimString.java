@@ -17,7 +17,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 public @interface TrimString {
 
     // metodo mensagem que vai devolver uma string e caso não passe uma messagem, é definido uma padrão
-    String message() default " Fiel cannot have blank spaces";
+    String message() default "Field cannot have blank spaces";
 
     // Devolve um array de classes chamada groups lista de grupos de validação. Permite que uma mesma anotação seja utilizada em diversos contextos
     Class<?>[]groups() default {};
